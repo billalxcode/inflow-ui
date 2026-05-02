@@ -36,11 +36,9 @@ export function CreateProjectDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant="ghost" className="w-full justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Create Project
-        </Button>
+      <DialogTrigger className="w-full justify-start gap-2 inline-flex items-center px-2 py-1.5 text-sm rounded-md hover:bg-accent cursor-pointer">
+        <Plus className="h-4 w-4" />
+        Create Project
       </DialogTrigger>
       <DialogContent>
         <form onSubmit={handleSubmit}>

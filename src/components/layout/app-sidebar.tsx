@@ -12,7 +12,6 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { CreateProjectDialog } from "@/components/project/create-project-dialog";
@@ -51,11 +50,12 @@ export function AppSidebar() {
             <SidebarMenu>
               {projects.map((project) => (
                 <SidebarMenuItem key={project.id}>
-                  <SidebarMenuButton asChild>
-                    <Link href={`/project/${project.id}`}>
-                      {project.name}
-                    </Link>
-                  </SidebarMenuButton>
+                  <Link
+                    href={`/project/${project.id}`}
+                    className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent"
+                  >
+                    {project.name}
+                  </Link>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -66,19 +66,17 @@ export function AppSidebar() {
       <SidebarFooter>
         <CreateProjectDialog />
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button className="flex w-full items-center gap-2 rounded-md p-2 hover:bg-accent">
-              <Avatar className="h-8 w-8">
-                <AvatarImage src={account.avatar} />
-                <AvatarFallback>{account.name[0]}</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col items-start text-sm">
-                <span className="font-medium">{account.name}</span>
-                <span className="text-xs text-muted-foreground">
-                  {account.email}
-                </span>
-              </div>
-            </button>
+          <DropdownMenuTrigger className="flex w-full items-center gap-2 rounded-md p-2 hover:bg-accent">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src={account.avatar} />
+              <AvatarFallback>{account.name[0]}</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col items-start text-sm">
+              <span className="font-medium">{account.name}</span>
+              <span className="text-xs text-muted-foreground">
+                {account.email}
+              </span>
+            </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
             <DropdownMenuItem>Settings</DropdownMenuItem>
