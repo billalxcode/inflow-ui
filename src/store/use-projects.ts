@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 import type { Project } from "@/types/project";
 
 // Simple in-memory store for projects (can be replaced with API later)

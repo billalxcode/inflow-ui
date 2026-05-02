@@ -1,8 +1,16 @@
 // src/components/layout/app-sidebar.tsx
 "use client";
 
+import { LayoutDashboard } from "lucide-react";
 import Link from "next/link";
-import { useProjects } from "@/store/use-projects";
+import { CreateProjectDialog } from "@/components/project/create-project-dialog";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -14,15 +22,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { CreateProjectDialog } from "@/components/project/create-project-dialog";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LayoutDashboard } from "lucide-react";
+import { useProjects } from "@/store/use-projects";
 
 // Static account data (future: from auth)
 const account = {

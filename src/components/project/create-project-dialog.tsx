@@ -1,9 +1,9 @@
 // src/components/project/create-project-dialog.tsx
 "use client";
 
-import { useState } from "react";
+import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useProjects } from "@/store/use-projects";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Plus } from "lucide-react";
+import { useProjects } from "@/store/use-projects";
 
 export function CreateProjectDialog() {
   const [open, setOpen] = useState(false);
@@ -60,7 +60,11 @@ export function CreateProjectDialog() {
             />
           </div>
           <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setOpen(false)}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setOpen(false)}
+            >
               Cancel
             </Button>
             <Button type="submit" disabled={!name.trim()}>

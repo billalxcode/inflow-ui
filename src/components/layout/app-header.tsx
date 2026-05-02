@@ -1,8 +1,8 @@
 // src/components/layout/app-header.tsx
 "use client";
 
-import * as React from "react";
 import { usePathname } from "next/navigation";
+import type * as React from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,7 +11,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Home } from "lucide-react";
 
 function generateBreadcrumbs(pathname: string) {
   const segments = pathname.split("/").filter(Boolean);

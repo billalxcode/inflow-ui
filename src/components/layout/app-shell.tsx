@@ -1,10 +1,10 @@
 // src/components/layout/app-shell.tsx
 "use client";
 
-import { ReactNode } from "react";
-import { AppSidebar } from "./app-sidebar";
-import { AppHeader } from "./app-header";
+import type { ReactNode } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppHeader } from "./app-header";
+import { AppSidebar } from "./app-sidebar";
 
 interface AppShellProps {
   children: ReactNode;

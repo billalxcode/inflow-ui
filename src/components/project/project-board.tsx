@@ -1,16 +1,14 @@
 // src/components/project/project-board.tsx
 "use client";
 
-import { useParams } from "next/navigation";
-import { useProjects } from "@/store/use-projects";
+import { AlertCircle } from "lucide-react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { useProjects } from "@/store/use-projects";
 
 export function ProjectBoard({ projectId }: { projectId: string }) {
   const { getProject } = useProjects();

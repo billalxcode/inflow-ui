@@ -1,4 +1,6 @@
 // src/app/page.tsx
+
+import { LayoutDashboard, Plus } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LayoutDashboard, Plus } from "lucide-react";
 
 export default function Home() {
   return (
