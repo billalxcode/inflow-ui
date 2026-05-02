@@ -43,18 +43,26 @@ export function AppHeader() {
     <header className="flex h-14 items-center border-b px-4">
       <Breadcrumb>
         <BreadcrumbList>
-          {breadcrumbs.map((crumb, index) => (
-            <BreadcrumbItem key={crumb.href}>
-              {index < breadcrumbs.length - 1 ? (
-                <>
-                  <BreadcrumbLink href={crumb.href}>{crumb.label}</BreadcrumbLink>
-                  <BreadcrumbSeparator />
-                </>
-              ) : (
-                <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
-              )}
-            </BreadcrumbItem>
-          ))}
+          {breadcrumbs.map((crumb, index) => {
+            const isLast = index === breadcrumbs.length - 1;
+
+            return (
+              <li key={crumb.href} className="contents">
+                <BreadcrumbItem>
+                  {isLast ? (
+                    <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink href={crumb.href}>{crumb.label}</BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+                {!isLast && (
+                  <BreadcrumbSeparator>
+                    <span className="mx-1">/</span>
+                  </BreadcrumbSeparator>
+                )}
+              </li>
+            );
+          })}
         </BreadcrumbList>
       </Breadcrumb>
     </header>
