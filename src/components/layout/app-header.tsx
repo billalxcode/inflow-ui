@@ -51,7 +51,9 @@ export function AppHeader() {
                 {isLast ? (
                   <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
                 ) : (
-                  <BreadcrumbLink href={crumb.href}>{crumb.label}</BreadcrumbLink>
+                  <BreadcrumbLink href={crumb.href}>
+                    {crumb.label}
+                  </BreadcrumbLink>
                 )}
               </BreadcrumbItem>,
             ];
@@ -60,7 +62,7 @@ export function AppHeader() {
               items.push(
                 <BreadcrumbSeparator key={`sep-${crumb.href}`}>
                   <span className="mx-1">/</span>
-                </BreadcrumbSeparator>
+                </BreadcrumbSeparator>,
               );
             }
 

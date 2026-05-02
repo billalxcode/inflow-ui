@@ -1,7 +1,13 @@
 // src/app/page.tsx
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { LayoutDashboard, Plus } from "lucide-react";
 
 export default function Home() {
@@ -14,7 +20,8 @@ export default function Home() {
           </div>
           <CardTitle className="text-2xl">Welcome to InFlow</CardTitle>
           <CardDescription>
-            Network simulation made simple. Create nodes, connect devices, and visualize your network topology.
+            Network simulation made simple. Create nodes, connect devices, and
+            visualize your network topology.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">

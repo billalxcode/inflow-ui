@@ -5,7 +5,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useProjects } from "@/store/use-projects";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft } from "lucide-react";
@@ -38,7 +44,8 @@ export default function CreateProjectPage() {
           </Link>
           <CardTitle>Create New Project</CardTitle>
           <CardDescription>
-            Set up your network simulation project. You can add devices and connections after creation.
+            Set up your network simulation project. You can add devices and
+            connections after creation.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -66,7 +73,11 @@ export default function CreateProjectPage() {
               <Button type="submit" disabled={!name.trim()} className="flex-1">
                 Create Project
               </Button>
-              <Button type="button" variant="outline" onClick={() => router.back()}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => router.back()}
+              >
                 Cancel
               </Button>
             </div>

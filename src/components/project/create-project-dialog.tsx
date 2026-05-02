@@ -36,12 +36,14 @@ export function CreateProjectDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={
-        <Button variant="default" className="w-full justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Create Project
-        </Button>
-      } />
+      <DialogTrigger
+        render={
+          <Button variant="default" className="w-full justify-start gap-2">
+            <Plus className="h-4 w-4" />
+            Create Project
+          </Button>
+        }
+      />
       <DialogContent>
         <form onSubmit={handleSubmit}>
           <DialogHeader>
@@ -62,7 +64,11 @@ export function CreateProjectDialog() {
             />
           </div>
           <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setOpen(false)}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setOpen(false)}
+            >
               Cancel
             </Button>
             <Button type="submit" disabled={!name.trim()}>

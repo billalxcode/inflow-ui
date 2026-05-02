@@ -3,7 +3,13 @@
 
 import { useParams } from "next/navigation";
 import { useProjects } from "@/store/use-projects";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 
 export function ProjectBoard({ projectId }: { projectId: string }) {
@@ -18,7 +24,8 @@ export function ProjectBoard({ projectId }: { projectId: string }) {
             <AlertCircle className="h-12 w-12 mx-auto text-destructive mb-4" />
             <CardTitle>Project Not Found</CardTitle>
             <CardDescription>
-              The project you are looking for does not exist or has been deleted.
+              The project you are looking for does not exist or has been
+              deleted.
             </CardDescription>
           </CardHeader>
         </Card>
