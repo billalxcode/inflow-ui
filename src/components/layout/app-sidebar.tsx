@@ -48,6 +48,9 @@ export function AppSidebar() {
           <SidebarGroupLabel>Projects</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
+              <SidebarMenuItem>
+                <CreateProjectDialog />
+              </SidebarMenuItem>
               {projects.map((project) => (
                 <SidebarMenuItem key={project.id}>
                   <Link
@@ -64,7 +67,6 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter>
-        <CreateProjectDialog />
         <DropdownMenu>
           <DropdownMenuTrigger className="flex w-full items-center gap-2 rounded-md p-2 hover:bg-accent">
             <Avatar className="h-8 w-8">
